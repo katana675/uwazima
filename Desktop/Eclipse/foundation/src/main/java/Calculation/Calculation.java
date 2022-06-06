@@ -30,7 +30,7 @@ public class Calculation extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String view = "/WEB-INF/view/calulation.jsp";
+		String view = "/WEB-INF/view/calculation.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);
 	}
