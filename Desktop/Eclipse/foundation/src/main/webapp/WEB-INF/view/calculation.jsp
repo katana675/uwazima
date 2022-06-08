@@ -14,6 +14,7 @@
 <c:when test="${kekka<80}">良くできました</c:when>
 <c:when test="${kekka>=80}">大変良くできました</c:when>
 <c:otherwise>0~100を入力してください</c:otherwise>
-</c:choose>
+</c:choose><br>
+<button type="button" onclick="history.back()">戻る</button>
 </body>
 </html>
