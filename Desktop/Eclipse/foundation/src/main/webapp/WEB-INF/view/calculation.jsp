@@ -9,7 +9,7 @@
 <body>
 <h2>結果</h2><br>
 あなたの入力した数字は<%= request.getAttribute("kekka") %>です 
-<% @ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
 <c:when test="${kekka<=50}">頑張りましょう</c:when>
 <c:when test="${kekka<80}">良くできました</c:when>
