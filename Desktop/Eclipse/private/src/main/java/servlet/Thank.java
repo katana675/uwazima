@@ -44,6 +44,7 @@ public class Thank extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 	    String mail = request.getParameter("mail");
 	    String phone = request.getParameter("phone");
@@ -60,7 +61,7 @@ public class Thank extends HttpServlet {
 		System.out.println(msg);
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root","");
-			String sql = "insert into item(name,mailaddress,tel)values(?,?,?)";	
+			String sql = "insert into user(name,mailaddress,tel)values(?,?,?)";	
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1,name);
 			st.setString(2,mail);
