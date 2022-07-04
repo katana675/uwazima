@@ -37,6 +37,7 @@ public class Thank extends HttpServlet {
 		String view = "/WEB-INF/view/thank.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);
+//	    0=男性　1=女性　2=秘密
 	}
 
 	/**
@@ -48,6 +49,8 @@ public class Thank extends HttpServlet {
 		String name = request.getParameter("name");
 	    String mail = request.getParameter("mail");
 	    String phone = request.getParameter("phone");
+	    String gender=request.getParameter("gender");
+	    int genders=Integer.parseInt(gender);
 	    String msg="";
 	    try {
 		      Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -61,11 +64,12 @@ public class Thank extends HttpServlet {
 		System.out.println(msg);
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root","");
-			String sql = "insert into user(name,mailaddress,tel)values(?,?,?)";	
+			String sql = "insert into user(name,mailaddress,tel,gender)values(?,?,?,?)";	
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1,name);
 			st.setString(2,mail);
 			st.setString(3, phone);
+			st.setInt(4, genders);
 			int result = st.executeUpdate();
 			st.close();
             con.close();
