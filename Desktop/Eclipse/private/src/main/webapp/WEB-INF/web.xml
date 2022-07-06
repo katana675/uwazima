@@ -26,4 +26,22 @@
     <servlet-name>check</servlet-name>
     <url-pattern>/check</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>search</servlet-name>
+    <servlet-class>servlet.Search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>search</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>result</servlet-name>
+    <servlet-class>servlet.Search_result</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>result</servlet-name>
+    <url-pattern>/result</url-pattern>
+  </servlet-mapping>
 </web-app>
