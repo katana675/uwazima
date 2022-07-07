@@ -65,9 +65,10 @@ public class Search_result extends HttpServlet {
 				String name=rs.getString("name");
 				String mailaddress=rs.getString("mailaddress");
 				String tele=rs.getString("tel");
+				
 				int gender=rs.getInt("gender");
-				if(gender=0) {
-					String gender=Integer.Paraseint(gender)
+				if(gender==0) {
+					
 				}
 			    request.setAttribute("tel_userid", userid);
 			    request.setAttribute("tel_name",name);
