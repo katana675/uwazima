@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+検索結果
+<%= request.getAttribute("tel_userid") %> 
+<%= request.getAttribute("tel_name") %> 
+<%= request.getAttribute("tel_mailaddress") %> 
+<button type="button" onclick="history.back()">戻る</button>
 </body>
 </html>

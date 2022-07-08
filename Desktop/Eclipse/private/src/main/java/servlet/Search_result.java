@@ -65,24 +65,29 @@ public class Search_result extends HttpServlet {
 				String name=rs.getString("name");
 				String mailaddress=rs.getString("mailaddress");
 				String tele=rs.getString("tel");
-				
 				int gender=rs.getInt("gender");
-				if(gender==0) {
-					
-				}
+				String c_gender;
 			    request.setAttribute("tel_userid", userid);
 			    request.setAttribute("tel_name",name);
 			    request.setAttribute("tel_mailaddress",mailaddress);
 			    request.setAttribute("tel_tel",tele);
-			    request.setAttribute("gender",gender);
+			    if(gender==0) {
+			    	request.setAttribute("tel_gender","男性");
+				}else if(gender==1) {
+					request.setAttribute("tel_gender","女性");
+				}else if(gender==2) {
+					request.setAttribute("tel_gender","秘密");
+				}else {
+					request.setAttribute("tel_gender","不適切な表現です");
 				}
+			}
 			rs.close();
             stmt.close();
             con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		String view = "/WEB-INF/view/search.jsp";
+		String view = "/WEB-INF/view/search_result.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);
 	}
