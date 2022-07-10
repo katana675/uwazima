@@ -11,6 +11,7 @@
 <%= request.getAttribute("tel_userid") %> 
 <%= request.getAttribute("tel_name") %> 
 <%= request.getAttribute("tel_mailaddress") %> 
+<%= request.getAttribute("tel_gender") %> 
 <button type="button" onclick="history.back()">戻る</button>
 </body>
 </html>

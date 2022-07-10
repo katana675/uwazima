@@ -35,9 +35,9 @@ public class Search_result extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String tel = request.getParameter("tel");
+		String search_tel = request.getParameter("phone");
 
-	    request.setAttribute("request", tel);
+	    request.setAttribute("request", search_tel);
 		String msg="";
 	    try {
 		      Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -97,6 +97,7 @@ public class Search_result extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 
