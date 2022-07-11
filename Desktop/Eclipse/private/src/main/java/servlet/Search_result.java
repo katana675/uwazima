@@ -3,9 +3,9 @@ package servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,9 +35,9 @@ public class Search_result extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("utf-8");
 		String search_tel = request.getParameter("phone");
-
-	    request.setAttribute("request", search_tel);
+		
 		String msg="";
 	    try {
 		      Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -51,42 +51,51 @@ public class Search_result extends HttpServlet {
 	    System.out.println(msg);
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root","");
-			String sql = "select * from user where tel=request";
+			String sql = "select * from user where tel=?";
 //			電話番号の変数を入れる
-			Statement stmt=con.createStatement(); 
-			ResultSet rs=stmt.executeQuery(sql);
+//			Statement stmt=con.createStatement(); 
+//			ResultSet rs=stmt.executeQuery(sql);
+			PreparedStatement st = con.prepareStatement(sql);
+			System.out.println(search_tel);
+			st.setString(1,search_tel);
+//			st.setString(1,"09012341234");
+//			st.setInt(1,1);
+			ResultSet rs=st.executeQuery();
+			int[] userid = new int[10];
+			String[] name = new String[10];
+			String[] mailaddress=new String[10];
+			String[] tel=new String[10];
+			int[] gender=new int[10];
+			int count = 0;
+//			userid=null;
 			while (rs.next()) {
 				System.out.println(rs.getInt("userid"));
 				System.out.println(rs.getString("name"));
 				System.out.println(rs.getString("mailaddress"));
 				System.out.println(rs.getString("tel"));
 				System.out.println(rs.getInt("gender"));
-				int userid=rs.getInt("userid");
-				String name=rs.getString("name");
-				String mailaddress=rs.getString("mailaddress");
-				String tele=rs.getString("tel");
-				int gender=rs.getInt("gender");
-				String c_gender;
-			    request.setAttribute("tel_userid", userid);
-			    request.setAttribute("tel_name",name);
-			    request.setAttribute("tel_mailaddress",mailaddress);
-			    request.setAttribute("tel_tel",tele);
-			    if(gender==0) {
-			    	request.setAttribute("tel_gender","男性");
-				}else if(gender==1) {
-					request.setAttribute("tel_gender","女性");
-				}else if(gender==2) {
-					request.setAttribute("tel_gender","秘密");
-				}else {
-					request.setAttribute("tel_gender","不適切な表現です");
-				}
+				
+//				userid[0]=rs.getInt("userid");
+				userid[count] = rs.getInt("userid");
+				 name[count]=rs.getString("name");
+				 mailaddress[count]=rs.getString("mailaddress");
+				 tel[count]=rs.getString("tel");
+				 gender[count]=rs.getInt("gender");
+			    
+			    count++;
 			}
+			request.setAttribute("tel_userid", userid);
+		    request.setAttribute("tel_name",name);
+		    request.setAttribute("tel_mailaddress",mailaddress);
+			request.setAttribute("tel_tel",tel);
+		    request.setAttribute("tel_gender",gender);
 			rs.close();
-            stmt.close();
+            st.close();
             con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 		String view = "/WEB-INF/view/search_result.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);
