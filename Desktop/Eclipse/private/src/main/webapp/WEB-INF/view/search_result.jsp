@@ -8,12 +8,12 @@
 </head>
 <body>
 検索結果
-<%int user_id[]=new int[10]; %>
-<%user_id[] = (int[])request.getAttribute("tel_userid");%>
-<%=int count=0; %>
+<%int[] user_id=new int[]{request.getAttribute("tel_userid")}; %>
+<%-- <%user_id[] = (int[])request.getAttribute("tel_userid");%> --%>
 <%for(int i=0; i<10; i++){
-	user_id[count];
-	count++;
+	System.out.println(user_id[i]);
+	user_id[i];
+	
 }
 	%>
 <%= request.getAttribute("tel_name") %> 
