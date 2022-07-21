@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -61,11 +62,16 @@ public class Search_result extends HttpServlet {
 //			st.setString(1,"09012341234");
 //			st.setInt(1,1);
 			ResultSet rs=st.executeQuery();
-			int[] userid = new int[10];
-			String[] name = new String[10];
-			String[] mailaddress=new String[10];
-			String[] tel=new String[10];
-			int[] gender=new int[10];
+//			int[] userid = new int[10];
+			ArrayList <Integer> userid=new ArrayList<>();
+			ArrayList <String> name=new ArrayList<>();
+			ArrayList <String> mailaddress=new ArrayList<>();
+			ArrayList <String> tel=new ArrayList<>();
+			ArrayList <Integer> gender=new ArrayList<>();
+//			String[] name = new String[10];
+//			String[] mailaddress=new String[10];
+//			String[] tel=new String[10];
+//			int[] gender=new int[10];
 			int count = 0;
 //			userid=null;
 			while (rs.next()) {
@@ -76,12 +82,16 @@ public class Search_result extends HttpServlet {
 				System.out.println(rs.getInt("gender"));
 				
 //				userid[0]=rs.getInt("userid");
-				userid[count] = rs.getInt("userid");
-				 name[count]=rs.getString("name");
-				 mailaddress[count]=rs.getString("mailaddress");
-				 tel[count]=rs.getString("tel");
-				 gender[count]=rs.getInt("gender");
-			    
+//				userid[count] = rs.getInt("userid");
+//				 name[count]=rs.getString("name");
+//				 mailaddress[count]=rs.getString("mailaddress");
+//				 tel[count]=rs.getString("tel");
+//				 gender[count]=rs.getInt("gender");
+				userid.add(rs.getInt("userid"));
+				name.add(rs.getString("name"));
+				mailaddress.add(rs.getString("mailaddress"));
+				tel.add(rs.getString("tel"));
+				gender.add(rs.getInt("gender"));
 			    count++;
 			}
 			request.setAttribute("tel_userid", userid);

@@ -36,6 +36,7 @@
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
   
+
    <servlet>
     <servlet-name>result</servlet-name>
     <servlet-class>servlet.Search_result</servlet-class>
