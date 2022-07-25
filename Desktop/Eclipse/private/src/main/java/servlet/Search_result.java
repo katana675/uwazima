@@ -1,5 +1,4 @@
 package servlet;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import bean.User;
 
 /**
  * Servlet implementation class Search_result
@@ -63,11 +64,12 @@ public class Search_result extends HttpServlet {
 //			st.setInt(1,1);
 			ResultSet rs=st.executeQuery();
 //			int[] userid = new int[10];
-			ArrayList <Integer> userid=new ArrayList<>();
-			ArrayList <String> name=new ArrayList<>();
-			ArrayList <String> mailaddress=new ArrayList<>();
-			ArrayList <String> tel=new ArrayList<>();
-			ArrayList <Integer> gender=new ArrayList<>();
+//			ArrayList <Integer> userid=new ArrayList<>();
+//			ArrayList <String> name=new ArrayList<>();
+//			ArrayList <String> mailaddress=new ArrayList<>();
+//			ArrayList <String> tel=new ArrayList<>();
+//			ArrayList <Integer> gender=new ArrayList<>();
+			ArrayList <User> list = new ArrayList<User>();
 //			String[] name = new String[10];
 //			String[] mailaddress=new String[10];
 //			String[] tel=new String[10];
@@ -87,18 +89,26 @@ public class Search_result extends HttpServlet {
 //				 mailaddress[count]=rs.getString("mailaddress");
 //				 tel[count]=rs.getString("tel");
 //				 gender[count]=rs.getInt("gender");
-				userid.add(rs.getInt("userid"));
-				name.add(rs.getString("name"));
-				mailaddress.add(rs.getString("mailaddress"));
-				tel.add(rs.getString("tel"));
-				gender.add(rs.getInt("gender"));
+//				userid.add(rs.getInt("userid"));
+//				name.add(rs.getString("name"));
+//				mailaddress.add(rs.getString("mailaddress"));
+//				tel.add(rs.getString("tel"));
+//				gender.add(rs.getInt("gender"));
+				int user_id =rs.getInt("userid");
+				String name =rs.getString("name");
+				String mailaddress=rs.getString("mailaddress");
+				String tel=rs.getString("tel");
+				int gender=rs.getInt("gender");
+
+				 list.add(new User(user_id,name,mailaddress,tel,gender));
 			    count++;
 			}
-			request.setAttribute("tel_userid", userid);
-		    request.setAttribute("tel_name",name);
-		    request.setAttribute("tel_mailaddress",mailaddress);
-			request.setAttribute("tel_tel",tel);
-		    request.setAttribute("tel_gender",gender);
+//			request.setAttribute("tel_userid", userid);
+//		    request.setAttribute("tel_name",name);
+//		    request.setAttribute("tel_mailaddress",mailaddress);
+//			request.setAttribute("tel_tel",tel);
+//		    request.setAttribute("tel_gender",gender);
+			request.setAttribute("Users",list );
 			rs.close();
             st.close();
             con.close();
