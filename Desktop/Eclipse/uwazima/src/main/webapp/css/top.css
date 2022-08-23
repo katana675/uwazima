@@ -1,4 +1,5 @@
 @charset "UTF-8";
-p{
+.center{
 	text-align:center;
+	font-size:30px;
 }
