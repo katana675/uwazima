@@ -8,18 +8,17 @@
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css">
 		</head>
 		<body>
-			宇和島観光
+			<a href="http://localhost:8080/uwazima/top">宇和島観光案内サイト
 			<ul class="col3">
 				<li class="left">
-					<a href="http://localhost:8080/uwazima/place">場所を見る</a>
-					<img src="${pageContext.request.contextPath}/image/welcome_castle.jpg">
-				</li>
-				<li class="middle">
-					<a href="http://localhost:8080/uwazima/top"><img src="${pageContext.request.contextPath}/image/topbutton.jpg" alt="top" class="top"></a>
+				<h2><a href="http://localhost:8080/uwazima/place">場所を見る</a></h2>
+					<img src="${pageContext.request.contextPath}/image/welcome_castle.jpg"><br>
+					<h3>宇和島で有名な場所を紹介します。例えば宇和島城や商店街があります。</h3>
 				</li>
 				<li class="right">
-					<a href="http://localhost:8080/uwazima/specialty">名物を食べる</a>
-					<img src="${pageContext.request.contextPath}/image/introduction.png">
+					<h2><a href="http://localhost:8080/uwazima/specialty">名物を食べる</a></h2>
+					<img src="${pageContext.request.contextPath}/image/introduction.png"><br>
+					<h3>宇和島に来たら食べておきたいものを紹介します。<br>お土産には大番がおすすめです。</h3>
 				</li>
 			</ul>
 		</body>

@@ -46,12 +46,12 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>place</servlet-name>
-    <servlet-class>uwazima.Place</servlet-class>
+    <servlet-name>plece</servlet-name>
+    <servlet-class>uwazima.Plece</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>place</servlet-name>
-    <url-pattern>/place</url-pattern>
+    <servlet-name>plece</servlet-name>
+    <url-pattern>/plece</url-pattern>
   </servlet-mapping>
   
   <servlet>
