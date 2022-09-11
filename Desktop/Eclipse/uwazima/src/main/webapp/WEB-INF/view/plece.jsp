@@ -18,8 +18,9 @@
 			<div class="sikaku">
 				<div class="left">
 					<form method="post" action="./plece">
-					<input type="button" name="shopping">商店街<br>
-					<input type="button" name="castle">宇和島城<br>
+					<input type="submit" value="商店街" name="shopping"><br>
+					<input type="submit" value="宇和島城"  name="castle"><br>
+					</form>
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_name")%>
