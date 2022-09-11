@@ -14,7 +14,17 @@
 				</div>
 			</div>
 		</head>
-<body>
-
-</body>
-</html>
+		<body>
+			<div class="sikaku">
+				<div class="left">
+					<h3>商店街</h3>
+				</div>
+				<div class="right">
+					<%=request.getAttribute("input_id")%>
+      				<%=request.getAttribute("input_name")%>
+      <td><%=request.getAttribute("input_mailaddress")%></td>
+      <td><%=request.getAttribute("input_tel") %></td>
+				</div>
+			</div>
+		</body>
+	</html>
