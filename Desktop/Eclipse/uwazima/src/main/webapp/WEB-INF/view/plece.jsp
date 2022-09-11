@@ -17,13 +17,15 @@
 		<body>
 			<div class="sikaku">
 				<div class="left">
-					<h3>商店街</h3>
+					<form method="post" action="./plece">
+					<input type="button" name="shopping">商店街<br>
+					<input type="button" name="castle">宇和島城<br>
 				</div>
 				<div class="right">
-					<%=request.getAttribute("input_id")%>
-      				<%=request.getAttribute("input_name")%>
-      <td><%=request.getAttribute("input_mailaddress")%></td>
-      <td><%=request.getAttribute("input_tel") %></td>
+					<%=request.getAttribute("input_name")%>
+      				<%=request.getAttribute("input_picture")%>
+      				<%=request.getAttribute("input_explanation")%>
+      				<%=request.getAttribute("input_distance") %>
 				</div>
 			</div>
 		</body>
