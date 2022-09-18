@@ -94,9 +94,6 @@ public class Plece extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-			String view = "/WEB-INF/view/kakunin.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);
 		doGet(request, response);
 	}
 }
