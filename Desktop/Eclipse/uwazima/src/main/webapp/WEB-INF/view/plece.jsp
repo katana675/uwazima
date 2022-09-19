@@ -23,8 +23,9 @@
 					</form>
 				</div>
 				<div class="right">
+				<!-- JavaScriptで動かす -->
 					<%=request.getAttribute("input_name")%>
-      				<%=request.getAttribute("input_picture")%>
+					<p style="text-align:center"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
       				<%=request.getAttribute("input_explanation")%>
       				<%=request.getAttribute("input_distance") %>
 				</div>

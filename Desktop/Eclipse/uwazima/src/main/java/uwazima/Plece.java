@@ -86,7 +86,6 @@ public class Plece extends HttpServlet {
 			    request.setAttribute("input_picture",input_picture);
 				request.setAttribute("input_explanation",input_explanation);
 			    request.setAttribute("input_distance",input_distance);
-				
 				}
 			rs.close();
             st.close();
