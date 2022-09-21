@@ -1,1 +1,21 @@
 @charset "UTF-8";
+.window{
+	height:100%;
+	width:100%;
+}
+
+.title{
+	width:30%;
+}
+
+.another{
+	width:30%;
+}
+
+.left{
+	width:35%;
+}
+
+.right{
+	flex:1;
+}

@@ -5,7 +5,7 @@
 		<head>
 			<meta charset="UTF-8">
 			<title>場所案内</title>
-			<div class="sikaku">
+			<div class="window">
 				<div class="title">
 					<h3>場所を見る</h3>
 				</div>
@@ -15,11 +15,13 @@
 			</div>
 		</head>
 		<body>
-			<div class="sikaku">
+			<div class="window">
 				<div class="left">
 					<form method="post" action="./plece">
 					<input type="submit" value="商店街" name="shopping"><br>
-					<input type="submit" value="宇和島城"  name="castle"><br>
+					<input type="submit" value="宇和島城" name="castle"><br>
+					<input type="submit" value="和霊神社" name="shrine"><br>
+					<input type="submit" value="きさいや広場" name="land">
 					</form>
 				</div>
 				<div class="right">
@@ -31,4 +33,7 @@
 				</div>
 			</div>
 		</body>
+		<footer>
+			<h2 style="text-align:center">2022.HIROSAWA reserved</h2>
+		</footer>
 	</html>

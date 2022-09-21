@@ -8,11 +8,8 @@
 		</head>
 		<body>
 			<form method="post" action="./result">	
-				<h3><input type="text" name="name">名前</h3><br>
-				<h3><input type="text" name="pass">写真のパス</h3><br>
-				<h3><input type="text" name="explanation">説明</h3><br>
-				<h3><input type="text" name="distance">距離</h3>
-				<button type="submit">新規登録</button>
+				<h3><input type="text" name="abc">歌詞</h3><br>
+				<button type="submit">登録</button>
 			</form>
 		</body>
 	</html>
