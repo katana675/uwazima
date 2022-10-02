@@ -4,6 +4,7 @@
 	<html>
 		<head>
 			<meta charset="UTF-8">
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/plece.css">
 			<title>場所案内</title>
 			<div class="window">
 				<div class="title">
@@ -25,15 +26,13 @@
 					</form>
 				</div>
 				<div class="right">
-				<!-- JavaScriptで動かす -->
 					<%=request.getAttribute("input_name")%>
 					<p style="text-align:center"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
       				<%=request.getAttribute("input_explanation")%>
-      				<%=request.getAttribute("input_distance") %>
 				</div>
 			</div>
 		</body>
 		<footer>
-			<h2 style="text-align:center">2022.HIROSAWA reserved</h2>
+			<h2 style="text-align:center; background: #00ff00">2022.HIROSAWA reserved</h2>
 		</footer>
 	</html>

@@ -14,6 +14,6 @@
 			<p class="center"><a href="http://localhost:8080/uwazima/gaiya" style="font-size:30pt">ガイヤを見てみる</a></p>
 		</body>
 		<footer>
-			<h2 style="text-align:center">2022.HIROSAWA reserved</h2>
+			<h2 style="text-align:center; background: #00ff00">2022.HIROSAWA reserved</h2>
 		</footer>
 	</html>

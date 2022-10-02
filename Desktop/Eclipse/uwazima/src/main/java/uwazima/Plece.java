@@ -33,13 +33,47 @@ public class Plece extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println(request.getAttribute("input_name"));
+		if(request.getAttribute("input_name")==null) {
+			try {
+			      Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+			    }catch (ClassNotFoundException e){
+			    	System.out.println(e.getMessage());
+			    }catch (Exception e){
+			    	System.out.println(e.getMessage());
+			    }
+			
+			try {
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","");
+				String sql = "select * from plece where id = 2";
+				PreparedStatement st = con.prepareStatement(sql);
+				ResultSet rs=st.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getString("name"));
+					System.out.println(rs.getString("picture"));
+					System.out.println(rs.getString("explanation"));
+					System.out.println(rs.getString("distance"));
+					String input_name=rs.getString("name");
+					String input_picture=rs.getString("picture");
+					String input_explanation=rs.getString("explanation");
+					String input_distance=rs.getString("distance");
+				    request.setAttribute("input_name",input_name);
+				    request.setAttribute("input_picture",input_picture);
+					request.setAttribute("input_explanation",input_explanation);
+				    request.setAttribute("input_distance",input_distance);
+					}
+				rs.close();
+	            st.close();
+	            con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		String view = "/WEB-INF/view/plece.jsp";
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 	    dispatcher.forward(request, response);	
 	}
-//商店街＝0　　宇和島城＝１
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
