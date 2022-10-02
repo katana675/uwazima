@@ -104,7 +104,7 @@ public class Specialty extends HttpServlet {
 	    System.out.println(msg);
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","");
-			String sql = "select * from plece where name=?";
+			String sql = "select * from specialty where name=?";
 			PreparedStatement st = con.prepareStatement(sql);
 			if(request.getParameter("orange")!=null) {
 			st.setString(1,"みかん");
