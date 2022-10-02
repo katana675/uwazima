@@ -5,12 +5,12 @@
 		<head>
 			<meta charset="UTF-8">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/gaiya.css">
-			<title>Insert title here</title>
+			<title>gaiya on road</title>
 		</head>
 		<body>
 			<div class="window">
 				<div class="left">
-					<iframe src="https://www.youtube.com/embed/9mBhWQ-_iqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/9mBhWQ-_iqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_lyrics")%>
