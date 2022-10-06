@@ -55,20 +55,38 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>create</servlet-name>
-    <servlet-class>uwazima.DB</servlet-class>
+    <servlet-name>createplece</servlet-name>
+    <servlet-class>uwazima.Createplece</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>create</servlet-name>
-    <url-pattern>/create</url-pattern>
+    <servlet-name>createplece</servlet-name>
+    <url-pattern>/Cplece</url-pattern>
   </servlet-mapping>
   
-   <servlet>
-    <servlet-name>result</servlet-name>
-    <servlet-class>uwazima.DB_end</servlet-class>
+  <servlet>
+    <servlet-name>createspecialty</servlet-name>
+    <servlet-class>uwazima.Createspecialty</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>result</servlet-name>
-    <url-pattern>/result</url-pattern>
+    <servlet-name>createspecialty</servlet-name>
+    <url-pattern>/Cspecialty</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>pthank</servlet-name>
+    <servlet-class>uwazima.Outplece</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>pthank</servlet-name>
+    <url-pattern>/Pthank</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>sthank</servlet-name>
+    <servlet-class>uwazima.Outspecialty</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sthank</servlet-name>
+    <url-pattern>/Sthank</url-pattern>
   </servlet-mapping>
 </web-app>

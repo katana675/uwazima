@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-登録できました
-<button type="button" onclick="history.back()">戻る</button>
+
 </body>
 </html>

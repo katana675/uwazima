@@ -27,7 +27,7 @@
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_name")%>
-					<p style="text-align:center"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
+					<div class="img"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></div><br>
       				<%=request.getAttribute("input_explanation")%>
 				</div>
 			</div>

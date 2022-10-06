@@ -13,7 +13,7 @@
 				<div class="another">
 					<h3><a href="http://localhost:8080/uwazima/plece">有名な場所を観光する</a></h3>
 				</div>
-				<div class="top">
+				<div class="title">
 					<h3><a href="http://localhost:8080/uwazima/top">トップに戻る</a></h3>
 				</div>
 			</div>
@@ -31,7 +31,9 @@
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_name")%>
-					<p style="text-align:center"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
+					<div class="img">
+						<img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
+      				</div>
       				<%=request.getAttribute("input_explanation")%>
       				
 				</div>
