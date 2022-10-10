@@ -20,3 +20,8 @@ li{
 	padding:20px 0;
 	border:0px;
 }
+
+.header{
+	text-align:center; 
+	background: #00ff00;
+}

@@ -7,6 +7,9 @@
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/gaiya.css">
 			<title>gaiya on road</title>
 		</head>
+		<header>
+		<h2 style="text-align:center; background:skyblue">宇和島観光サイト gaiya on road</h2>
+		</header>
 		<body>
 			<div class="window">
 				<div class="left">

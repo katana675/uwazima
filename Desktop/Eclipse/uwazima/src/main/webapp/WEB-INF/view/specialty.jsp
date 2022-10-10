@@ -6,6 +6,9 @@
 			<meta charset="UTF-8">
 			<title>食べ物・お土産</title>
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/specialty.css">
+		</head>
+		<header>
+		<h2 style="text-align:center; background:skyblue">宇和島観光サイト 名物観光ページ</h2>
 			<div class="window">
 				<div class="title">
 					<h3>名物を見る</h3>
@@ -17,7 +20,7 @@
 					<h3><a href="http://localhost:8080/uwazima/top">トップに戻る</a></h3>
 				</div>
 			</div>
-		</head>
+		</header>
 		<body>
 			<div class="window">
 				<div class="left">

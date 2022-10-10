@@ -6,15 +6,18 @@
 			<meta charset="UTF-8">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/plece.css">
 			<title>場所案内</title>
+		</head>
+		<header>
+			<h2 style="text-align:center; background:skyblue">宇和島観光サイト　名物観光ページ</h2>
 			<div class="window">
-				<div class="title">
-					<h3>場所を見る</h3>
-				</div>
-				<div class="another">
+				<div class="specialty">
 					<h3><a href="http://localhost:8080/uwazima/specialty">名物もチェックする</a></h3>
 				</div>
+				<div class="top">
+					<h3><a href="http://localhost:8080/uwazima/top">TOPページに戻る</a></h3>
+				</div>
 			</div>
-		</head>
+		</header>
 		<body>
 			<div class="window">
 				<div class="left">
@@ -27,7 +30,7 @@
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_name")%>
-					<div class="img"><img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></div><br>
+					<div><img class="img" src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></div><br>
       				<%=request.getAttribute("input_explanation")%>
 				</div>
 			</div>

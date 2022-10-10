@@ -1,5 +1,19 @@
 @charset "UTF-8";
-.center{
-	text-align:center;
-	font-size:30px;
+
+.window{
+	display:flex;
+	width:100%;
+	height:auto;
+}
+
+.img{
+	width:50%;
+	height:auto;
+	
+}
+
+.rink{
+	width:50%;
+	height:auto;
+
 }
