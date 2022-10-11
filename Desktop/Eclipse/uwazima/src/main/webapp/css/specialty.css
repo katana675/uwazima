@@ -5,12 +5,13 @@
 	display:flex;
 }
 
-.title{
-	width:30%;
+.plece{
+	width:50%;
+	background-color:#00ff00;
 }
-
-.another{
-	width:30%;
+.top{
+	width:50%;
+	background-color:#00ff00;
 }
 
 .left{

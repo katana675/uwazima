@@ -10,13 +10,10 @@
 		<header>
 		<h2 style="text-align:center; background:skyblue">宇和島観光サイト 名物観光ページ</h2>
 			<div class="window">
-				<div class="title">
-					<h3>名物を見る</h3>
-				</div>
-				<div class="another">
+				<div class="plece">
 					<h3><a href="http://localhost:8080/uwazima/plece">有名な場所を観光する</a></h3>
 				</div>
-				<div class="title">
+				<div class="top">
 					<h3><a href="http://localhost:8080/uwazima/top">トップに戻る</a></h3>
 				</div>
 			</div>
@@ -42,4 +39,7 @@
 				</div>
 			</div>
 		</body>
+		<footer>
+			<h2 style="text-align:center; background: #00ff00">2022.HIROSAWA reserved</h2>
+		</footer>
 	</html>
