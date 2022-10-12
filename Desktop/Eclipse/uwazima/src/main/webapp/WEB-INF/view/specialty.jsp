@@ -32,10 +32,9 @@
 				<div class="right">
 					<%=request.getAttribute("input_name")%>
 					<div class="img">
-						<img src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></p>
+						<img class="img" src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"><br>
       				</div>
       				<%=request.getAttribute("input_explanation")%>
-      				
 				</div>
 			</div>
 		</body>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+入力を確認しました。
 </body>
 </html>

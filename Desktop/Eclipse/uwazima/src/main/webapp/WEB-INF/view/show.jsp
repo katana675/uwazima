@@ -11,7 +11,6 @@
 			<h2 style="text-align:center; background:skyblue">宇和島観光サイト　紹介サイト</h2>
 		</header>
 		<body>
-		
 			<ul class="col3">
 				<li class="left">
 				<h2><a href="http://localhost:8080/uwazima/plece">場所を見る</a></h2>

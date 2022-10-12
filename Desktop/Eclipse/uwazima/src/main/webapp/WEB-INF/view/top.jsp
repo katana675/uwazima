@@ -18,7 +18,14 @@
 				</div>
 				<div class="rink">
 					<p class="center"><a href="http://localhost:8080/uwazima/show" style="font-size:30px; text-align:right">宇和島を見てみる</a></p>
+					<div class="plece">宇和島といえばこれというものを載せました。<br>
+					例えば宇和島城や和霊神社などがあります。<br>
+					</div>
 					<p class="center"><a href="http://localhost:8080/uwazima/gaiya" style="font-size:30px">ガイヤを見てみる</a></p>
+				<div class="gaiya">
+				ガイヤ祭りは夏祭りで行われてます。<br>
+				ガイヤ祭りの後の次の日には花火大会があり、宇和島市民からすれば楽しいイベントです。<br>
+				</div>
 				</div>
 			</div>
 		</body>

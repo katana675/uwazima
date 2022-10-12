@@ -9,11 +9,12 @@
 		</head>
 		<header>
 		<h2 style="text-align:center; background:skyblue">宇和島観光サイト gaiya on road</h2>
+		<h3><a href="http://localhost:8080/uwazima/top">トップに戻る</a></h3>
 		</header>
 		<body>
 			<div class="window">
 				<div class="left">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/9mBhWQ-_iqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="480" height="315" src="https://www.youtube.com/embed/9mBhWQ-_iqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="right">
 					<%=request.getAttribute("input_lyrics")%>

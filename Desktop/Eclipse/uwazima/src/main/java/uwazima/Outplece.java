@@ -44,12 +44,10 @@ public class Outplece extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
-	    String mail = request.getParameter("mail");
-	    String phone = request.getParameter("phone");
-	    String gender=request.getParameter("gender");
-	    int genders=Integer.parseInt(gender);
-		
-		String msg="";
+	    String picture = request.getParameter("picture");
+	    String explanation = request.getParameter("explanation");
+	    String distance=request.getParameter("distance");
+	 	String msg="";
 	    try {
 		      Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 		      msg = "ドライバのロードに成功しました";
@@ -61,31 +59,30 @@ public class Outplece extends HttpServlet {
 		    }
 	    System.out.println(msg);
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root","");
-			String sql = "select * from user where (name=? or mailaddress=?) and tel=?";
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","");
+			String sql = "insert into plece(name,picture,explanation,distance)values(?,?,?,?)";
 			PreparedStatement st = con.prepareStatement(sql);
 			System.out.println();
 			st.setString(1,name);
-			st.setString(2, mail);
-			st.setString(3,phone);
+			st.setString(2, picture);
+			st.setString(3,explanation);
+			st.setString(4,distance);
 			ResultSet rs=st.executeQuery();
 			while (rs.next()) {
-				System.out.println(rs.getInt("userid"));
-				System.out.println(rs.getString("name"));
-				System.out.println(rs.getString("mailaddress"));
-				System.out.println(rs.getString("tel"));
-				System.out.println(rs.getInt("gender"));
+				System.out.println(rs.getInt("name"));
+				System.out.println(rs.getString("picture"));
+				System.out.println(rs.getString("explanation"));
+				System.out.println(rs.getString("distance"));
 				
-				int input_id=rs.getInt("userid");
 				String input_name=rs.getString("name");
-				String input_mail=rs.getString("mailaddress");
-				String input_tel=rs.getString("tel");
-				int input_gender=rs.getInt("gender");
-				request.setAttribute("input_id", input_id);
+				String input_picture=rs.getString("picture");
+				String input_explanation=rs.getString("explanation");
+				String input_distance=rs.getString("distance");
+				
 			    request.setAttribute("input_name",input_name);
-			    request.setAttribute("input_mailaddress",input_mail);
-				request.setAttribute("input_tel",input_tel);
-			    request.setAttribute("input_gender",input_gender);
+			    request.setAttribute("input_picture",input_picture);
+				request.setAttribute("input_explanation",input_explanation);
+			    request.setAttribute("input_distance",input_distance);
 			}
 			rs.close();
             st.close();

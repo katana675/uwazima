@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+名物の登録を確認しました。
 </body>
 </html>
