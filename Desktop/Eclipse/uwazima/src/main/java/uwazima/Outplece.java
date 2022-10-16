@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -67,24 +66,8 @@ public class Outplece extends HttpServlet {
 			st.setString(2, picture);
 			st.setString(3,explanation);
 			st.setString(4,distance);
-			ResultSet rs=st.executeQuery();
-			while (rs.next()) {
-				System.out.println(rs.getInt("name"));
-				System.out.println(rs.getString("picture"));
-				System.out.println(rs.getString("explanation"));
-				System.out.println(rs.getString("distance"));
-				
-				String input_name=rs.getString("name");
-				String input_picture=rs.getString("picture");
-				String input_explanation=rs.getString("explanation");
-				String input_distance=rs.getString("distance");
-				
-			    request.setAttribute("input_name",input_name);
-			    request.setAttribute("input_picture",input_picture);
-				request.setAttribute("input_explanation",input_explanation);
-			    request.setAttribute("input_distance",input_distance);
-			}
-			rs.close();
+			int result=st.executeUpdate();
+
             st.close();
             con.close();
 		} catch (SQLException e) {

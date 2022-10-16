@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -59,27 +58,14 @@ public class Outspecialty extends HttpServlet {
 	    System.out.println(msg);
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio","root","");
-			String sql = "insert into spcialty(name,picture,explanation,)values(?,?,?)";
+			String sql = "insert into specialty(name,picture,explanation)values(?,?,?)";
 			PreparedStatement st = con.prepareStatement(sql);
 			System.out.println();
 			st.setString(1,name);
 			st.setString(2, picture);
 			st.setString(3,explanation);
-			ResultSet rs=st.executeQuery();
-			while (rs.next()) {
-				System.out.println(rs.getInt("name"));
-				System.out.println(rs.getString("picture"));
-				System.out.println(rs.getString("explanation"));
-				
-				String input_name=rs.getString("name");
-				String input_picture=rs.getString("picture");
-				String input_explanation=rs.getString("explanation");
-				
-			    request.setAttribute("input_name",input_name);
-			    request.setAttribute("input_picture",input_picture);
-				request.setAttribute("input_explanation",input_explanation);
-			}
-			rs.close();
+			int result=st.executeUpdate();
+			
             st.close();
             con.close();
 		} catch (SQLException e) {

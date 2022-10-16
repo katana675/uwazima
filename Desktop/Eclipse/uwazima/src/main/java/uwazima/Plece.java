@@ -90,6 +90,9 @@ public class Plece extends HttpServlet {
 		}else if(request.getParameter("land")!=null){
 			System.out.println("きさいや広場");
 			String search_castle = request.getParameter("land");
+		}else if(request.getParameter("park")!=null){
+			System.out.println("丸山公園");
+			String search_park = request.getParameter("park");
 		}
 		
 		String msg="";
@@ -115,6 +118,8 @@ public class Plece extends HttpServlet {
 			st.setString(1, "和霊神社");
 			}else if(request.getParameter("land")!=null){
 			st.setString(1, "きさいや広場");
+			}else if(request.getParameter("park")!=null){
+			st.setString(1, "丸山公園");
 			}
 			ResultSet rs=st.executeQuery();
 			while (rs.next()) {

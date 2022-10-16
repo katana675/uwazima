@@ -25,7 +25,8 @@
 					<input type="submit" value="商店街" name="shopping"><br>
 					<input type="submit" value="宇和島城" name="castle"><br>
 					<input type="submit" value="和霊神社" name="shrine"><br>
-					<input type="submit" value="きさいや広場" name="land">
+					<input type="submit" value="きさいや広場" name="land"><br>
+					<input type="submit" value="丸山公園" name="park">
 					</form>
 				</div>
 				<div class="right">
