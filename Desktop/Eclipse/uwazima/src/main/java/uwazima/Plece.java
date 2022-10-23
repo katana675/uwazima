@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import bean.Beanplece;
 
 /**
  * Servlet implementation class Place
@@ -122,6 +125,7 @@ public class Plece extends HttpServlet {
 			st.setString(1, "丸山公園");
 			}
 			ResultSet rs=st.executeQuery();
+			ArrayList <Beanolece> list = new ArrayList<Beanplece>();
 			while (rs.next()) {
 				System.out.println(rs.getString("name"));
 				System.out.println(rs.getString("picture"));
@@ -131,11 +135,9 @@ public class Plece extends HttpServlet {
 				String input_picture=rs.getString("picture");
 				String input_explanation=rs.getString("explanation");
 				String input_distance=rs.getString("distance");
-			    request.setAttribute("input_name",input_name);
-			    request.setAttribute("input_picture",input_picture);
-				request.setAttribute("input_explanation",input_explanation);
-			    request.setAttribute("input_distance",input_distance);
+			    list.add(new Beanplece(input_name,input_picture,input_explanation,input_distance));
 				}
+			request.setAttribute("Beanplece",list );
 			rs.close();
             st.close();
             con.close();
