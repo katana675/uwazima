@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ page import ="java.util.ArrayList,bean.Beanplece" %>
 <!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset="UTF-8">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/plece.css">
+			<% ArrayList<Beanplece> list=(ArrayList<Beanplece>)request.getAttribute("Beanplece"); %>
 			<title>場所案内</title>
 		</head>
 		<header>
@@ -30,9 +32,13 @@
 					</form>
 				</div>
 				<div class="right">
-					<%=request.getAttribute("input_name")%>
-					<div><img class="img" src="${pageContext.request.contextPath}/<%=request.getAttribute("input_picture")%>"></div><br>
-      				<%=request.getAttribute("input_explanation")%>
+					 <% for(Beanplece p:list){ %>
+  			<tr>
+				<td><%=p.getName() %></td>
+				<td><%=p.getExplanation() %></td>
+				<td><%=p.getDistance() %></td>
+			</tr>
+		<%} %>
 				</div>
 			</div>
 		</body>

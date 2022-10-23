@@ -51,19 +51,20 @@ public class Plece extends HttpServlet {
 				String sql = "select * from plece where id = 2";
 				PreparedStatement st = con.prepareStatement(sql);
 				ResultSet rs=st.executeQuery();
+				ArrayList <Beanplece> list = new ArrayList<Beanplece>();
+				int count=0;
 				while (rs.next()) {
 					System.out.println(rs.getString("name"));
 					System.out.println(rs.getString("picture"));
 					System.out.println(rs.getString("explanation"));
 					System.out.println(rs.getString("distance"));
+					int input_id=rs.getInt("input_id");
 					String input_name=rs.getString("name");
 					String input_picture=rs.getString("picture");
 					String input_explanation=rs.getString("explanation");
 					String input_distance=rs.getString("distance");
-				    request.setAttribute("input_name",input_name);
-				    request.setAttribute("input_picture",input_picture);
-					request.setAttribute("input_explanation",input_explanation);
-				    request.setAttribute("input_distance",input_distance);
+					 list.add(new Beanplece(input_id,input_name,input_picture,input_explanation,input_distance));
+					    count++;
 					}
 				rs.close();
 	            st.close();
@@ -125,17 +126,20 @@ public class Plece extends HttpServlet {
 			st.setString(1, "丸山公園");
 			}
 			ResultSet rs=st.executeQuery();
-			ArrayList <Beanolece> list = new ArrayList<Beanplece>();
+			ArrayList <Beanplece> list = new ArrayList<Beanplece>();
+			int count = 0;
 			while (rs.next()) {
 				System.out.println(rs.getString("name"));
 				System.out.println(rs.getString("picture"));
 				System.out.println(rs.getString("explanation"));
 				System.out.println(rs.getString("distance"));
+				int input_id=rs.getInt("input_id");
 				String input_name=rs.getString("name");
 				String input_picture=rs.getString("picture");
 				String input_explanation=rs.getString("explanation");
 				String input_distance=rs.getString("distance");
-			    list.add(new Beanplece(input_name,input_picture,input_explanation,input_distance));
+			    list.add(new Beanplece(input_id,input_name,input_picture,input_explanation,input_distance));
+			    count++;
 				}
 			request.setAttribute("Beanplece",list );
 			rs.close();
