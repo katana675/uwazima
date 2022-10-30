@@ -32,12 +32,10 @@
 					</form>
 				</div>
 				<div class="right">
-					 <% for(Beanplece p:list){ %>
-  			<tr>
-				<td><%=p.getName() %></td>
-				<td><%=p.getExplanation() %></td>
-				<td><%=p.getDistance() %></td>
-			</tr>
+				<% for(Beanplece p:list){ %>
+					<%=p.getName() %>
+					<%=p.getExplanation() %>
+					<%=p.getDistance() %>
 		<%} %>
 				</div>
 			</div>

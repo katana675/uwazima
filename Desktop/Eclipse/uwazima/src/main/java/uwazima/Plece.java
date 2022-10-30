@@ -58,7 +58,7 @@ public class Plece extends HttpServlet {
 					System.out.println(rs.getString("picture"));
 					System.out.println(rs.getString("explanation"));
 					System.out.println(rs.getString("distance"));
-					int input_id=rs.getInt("input_id");
+					int input_id=rs.getInt("id");
 					String input_name=rs.getString("name");
 					String input_picture=rs.getString("picture");
 					String input_explanation=rs.getString("explanation");
@@ -66,6 +66,7 @@ public class Plece extends HttpServlet {
 					 list.add(new Beanplece(input_id,input_name,input_picture,input_explanation,input_distance));
 					    count++;
 					}
+				request.setAttribute("Beanplece",list );
 				rs.close();
 	            st.close();
 	            con.close();
@@ -133,7 +134,7 @@ public class Plece extends HttpServlet {
 				System.out.println(rs.getString("picture"));
 				System.out.println(rs.getString("explanation"));
 				System.out.println(rs.getString("distance"));
-				int input_id=rs.getInt("input_id");
+				int input_id=rs.getInt("id");
 				String input_name=rs.getString("name");
 				String input_picture=rs.getString("picture");
 				String input_explanation=rs.getString("explanation");
